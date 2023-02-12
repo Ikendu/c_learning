@@ -1,10 +1,14 @@
 #include <stdio.h>
 
+#define IN 1
+#define OUT 0
+
 main()
 {
 	int c, nw, n1, nc, state;
 	
-	nw = n1 = nw = nc = state = 0;
+	nw = n1 = nw = nc;
+	state = OUT;
 	
 	while((c = getchar()) != EOF)
 	{
@@ -15,7 +19,11 @@ main()
 		}
 		if(c == ' ' || c == "\n" || c == "\t")
 		{
-			state = 1;
+			state = OUT;
+		}
+		else if (state == OUT)
+		{
+			state = IN;
 			++nw;
 		}
 	}
