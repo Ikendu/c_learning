@@ -13,11 +13,11 @@ main()
 	while((c = getchar()) != EOF)
 	{
 		++nc;
-		if (c == "\n")
+		if (c == '\n')
 		{
 			++n1;
 		}
-		if(c == ' ' || c == "\n" || c == "\t")
+		if(c == ' ' || c == '\n' || c == '\t')
 		{
 			state = OUT;
 		}
@@ -27,5 +27,5 @@ main()
 			++nw;
 		}
 	}
-	printf("%d %d %d/n", n1, nw, nc);
+	printf("%d %d %d\n", n1, nw, nc);
 }
