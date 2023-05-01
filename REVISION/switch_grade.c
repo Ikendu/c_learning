@@ -35,7 +35,7 @@ char grade()
                                 case 'F': printf("%s you failed the test\n", name);
                                 break;
                                 default:
-                                       printf("You entered an invalid grade");
+                                       printf("You entered an invalid grade\n");
                         }
 
                 }
