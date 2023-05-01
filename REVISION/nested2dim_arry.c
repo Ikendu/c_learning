@@ -24,5 +24,16 @@ int main(void)
         //getting memmory addresses
         printf("i = %p\nj = %d\narry = %p\n", &i, *&j, &arry);
 
-        FILE *fptr = fopen("employee.txt", "w");
+        FILE *fptr = fopen("employee.txt", "a");
+        fprintf(fptr, "%s", "\nAniede Chibundu: Software Engineer \nAniede Onyinyechi: Business Administrator \nVictor Ebuka: Site Admin");
+        i = 0;
+
+        char line[250];
+
+        fgets(line, 250, fptr);
+
+        printf("%s\n", line);
+
+        fclose(fptr);
+
 }
