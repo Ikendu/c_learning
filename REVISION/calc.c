@@ -6,8 +6,6 @@ double calc()
         char op;
         char get;
 
-
-
         while (1)
         {
               printf("Enter a character to continue or q to exit\n");
