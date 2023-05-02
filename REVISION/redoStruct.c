@@ -26,4 +26,10 @@ int main(void)
 
        printf("%s\n", student1.name);
        printf("%f\n", student1.gp);
+
+       struct Student student3 = {"Onyinye", "2016/292932", "Ziology", 25, 3.7};
+       struct Student *ptr;
+       ptr = &student3;
+       printf("%s  %d\n", ptr->name, ptr->age);
+       printf("%s\n", ptr->dept);
 }
