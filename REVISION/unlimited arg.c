@@ -2,6 +2,10 @@
 #include <stdarg.h>
 #include <string.h>
 
+#define PI 3.14
+#define ADD(X) (X+X)
+#define MULT(X) (X*X)
+
 void varg_func(int nums, ...)
 {
         int i;
@@ -14,7 +18,7 @@ void varg_func(int nums, ...)
                 printf("%d ", value);
         }
         printf("\n");
-        
+
         va_end(args);
 }
 
@@ -22,4 +26,11 @@ int main()
 {
         varg_func(4, 5, 2, 5, 8);
         varg_func(3, 4, 9, 3);
+
+        int n = ADD(5) * ADD(5);
+        int m = MULT(5);
+        printf("%d\n ", n);
+        printf("%d\n ", m);
+
+
 }
