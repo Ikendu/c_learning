@@ -3,9 +3,9 @@
 
 struct Student
 {
-        char name[50];
-        char reg[15];
-        char dept[20];
+        char *name;
+        char *reg;
+        char *dept;
         int age;
         double gp;
 };
@@ -16,7 +16,13 @@ int main(void)
 
        student1.age = 20;
        student1.gp = 3.6;
-       strcpy(student1.name, "Aniede");
+       student1.name = "Ikendu I of Africa The time is coming but starts now";
+       //strcpy(student1.name, "Aniede");
+
+       struct Student student2 = {"Chibundu ", "2017/241390", "Computer Science", 32, 3.6};
+       printf("%s  %f\n", student2.name, student2.gp);
+       printf("%s\n", student2.reg);
+       printf("%d\n", student2.age);
 
        printf("%s\n", student1.name);
        printf("%f\n", student1.gp);
