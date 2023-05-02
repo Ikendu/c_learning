@@ -28,6 +28,8 @@ student_s *student(char *name, char *reg, char *dept, char *age, double gp)
 int main(void)
 {
        student_s *student1 = student("Obi", "2005/240189", "History", 57, 2.5);
+       if (student == NULL)
+          return (-1);
        printf("       %s\n", student1->name);
        printf("       %f\n", student1->gp);
        printf("       %s\n", student1->dept);
