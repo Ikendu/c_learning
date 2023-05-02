@@ -10,6 +10,20 @@ struct Student
         double gp;
 };
 
+struct Student *student(char *name, char *reg, char *dept, char *age, int gp)
+{
+       struct Student *student;
+       student = malloc(sizeof(struct Student));
+       if(student == NULL)
+              return (NULL);
+        student->name = name;
+        student->reg = reg;
+        student->age = age;
+        student->gp = gp;
+
+        return student;
+}
+
 int main(void)
 {
        struct Student student1;
