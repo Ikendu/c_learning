@@ -1,49 +1,47 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-struct Student
+typedef struct Student
 {
         char *name;
         char *reg;
         char *dept;
         int age;
         double gp;
-};
+}student_s;
 
-struct Student *student(char *name, char *reg, char *dept, char *age, int gp)
+student_s *student(char *name, char *reg, char *dept, char *age, double gp)
 {
-       struct Student *student;
-       student = malloc(sizeof(struct Student));
+       student_s *student;
+       student = malloc(sizeof(student_s));
        if(student == NULL)
               return (NULL);
         student->name = name;
         student->reg = reg;
         student->age = age;
         student->gp = gp;
+        student->dept = dept;
 
         return student;
 }
 
 int main(void)
 {
-       struct Student student1;
-
-       student1.age = 20;
-       student1.gp = 3.6;
-       student1.name = "Ikendu I of Africa The time is coming but starts now";
-       //strcpy(student1.name, "Aniede");
+       student_s *student1 = student("Obi", "2005/240189", "History", 57, 2.5);
+       printf("       %s\n", student1->name);
+       printf("       %f\n", student1->gp);
+       printf("       %s\n", student1->dept);
 
        struct Student student2 = {"Chibundu ", "2017/241390", "Computer Science", 32, 3.6};
        printf("%s  %f\n", student2.name, student2.gp);
        printf("%s\n", student2.reg);
        printf("%d\n", student2.age);
 
-       printf("%s\n", student1.name);
-       printf("%f\n", student1.gp);
-
        struct Student student3 = {"Onyinye", "2016/292932", "Ziology", 25, 3.7};
        struct Student *ptr;
        ptr = &student3;
        printf("%s  %d\n", ptr->name, ptr->age);
        printf("%s\n", ptr->dept);
+
+       return (0);
 }
