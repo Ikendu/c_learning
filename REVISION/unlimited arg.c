@@ -29,8 +29,14 @@ int main()
 
         int n = ADD(5) * ADD(5);
         int m = MULT(5);
-        printf("%d\n ", n);
-        printf("%d\n ", m);
+        printf("%d\n", n);
+        printf("%d\n", m);
+
+        printf("Current time: %s\n", __TIME__);
+        printf("Current date: %s\n", __DATE__);
+        printf("Line Number: %d\n", __LINE__);
+        printf("File name: %s\n", __FILE__);
+        printf("ANSC: %d\n", __STDC__);
 
 
 }
