@@ -7,26 +7,22 @@ struct Value
         int n;
 };
 //returning pointer to a structure from a function
-struct Value* fun(int a, int b)
+struct Value *fun(int a, int b)
 {
-       struct Value *ptr = (struct Value *)malloc(sizeof(struct Value));
-       ptr->m = a + 5 ;
-       ptr->n = b * 2;
+        struct Value *ptr = malloc(sizeof(struct Value));
+        ptr->m = a * 3;
+        ptr->n = b * 2;
 
-       return ptr;
+        return (ptr);
 }
-void print(struct Value *ptr)
-{
-        printf("%d  %d\n", ptr->m, ptr->n);
-}
-
-int main()
+int main(void)
 {
         struct Value *ptr1, *ptr2;
-        ptr1 = fun(3, 6);
-        ptr2 = fun(4, 7);
-        print(ptr1);
-        print(ptr2);
+        ptr1 = fun(3, 5);
+        ptr2 = fun(4, 6);
+        printf("%d  %d\n", ptr1->m, ptr1->n);
+        printf("%d  %d\n", ptr2->m, ptr2->n);
+
         free(ptr1);
         free(ptr2);
 
