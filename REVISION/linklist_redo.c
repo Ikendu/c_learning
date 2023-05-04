@@ -57,7 +57,55 @@ node *insert_begin(node *head, int d)
 
         ptr->link = head;
         head = ptr;
+
+        return (head);
 }
+//insert at a certain position
+void insert_pos(node *head, int d, int pos)
+{
+        node *ptr1 = malloc(sizeof(node));
+        ptr1->data = d;
+        ptr1->link = NULL;
+
+        node *ptr = head;
+
+        pos--;
+        while (pos != 1)
+        {
+              ptr = ptr->link;
+              pos--;
+        }
+        ptr1->link = ptr->link;
+        ptr->link = ptr1;
+}
+//delete last Node of list
+node *delete_node(node *head)
+{
+    if (head == NULL)
+        printf("List is empty");
+     else if (head->link == NULL)
+     {
+             free(head);
+             head = NULL;
+     }
+     else
+     {
+              node *temp = head;
+              node *temp2 = head;
+             while (temp->link != NULL)
+             {
+                     temp2 = temp;
+                     temp = temp->link;
+             }
+             temp2->link = NULL;
+             free(temp);
+             temp = NULL;
+
+     }
+     return (head);
+
+}
+
 
 int main()
 {
@@ -88,10 +136,12 @@ int main()
         ptr = insert_begin(ptr, 400);
         ptr = insert_begin(ptr, 500);
         ptr = insert_begin(ptr, 1000);
+        insert_pos(ptr, 401, 3);
+        insert_pos(ptr, 402, 4);
+        insert_pos(ptr, 403, 4);
+        delete_node(ptr);
         //print_list(ptr);
         print_list(ptr);
-
-
 
         return(0);
 
