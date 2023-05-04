@@ -122,7 +122,18 @@ node *delete_begin(node *head)
         }
         return (head);
 }
-
+//delete entire link list
+node *delete_all(node *head)
+{
+        node *temp = head;
+        while (head != NULL)
+        {
+                temp = temp->link;
+                free(head);
+                head = temp;
+        }
+        return (head);
+}
 
 int main()
 {
@@ -158,7 +169,8 @@ int main()
         insert_pos(ptr, 403, 4);
         delete_node(ptr);
         ptr = delete_begin(ptr);
-        //print_list(ptr);
+        ptr = delete_all(ptr);
+
         print_list(ptr);
 
         return(0);
