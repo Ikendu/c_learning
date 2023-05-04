@@ -91,19 +91,36 @@ node *delete_node(node *head)
      else
      {
               node *temp = head;
-              node *temp2 = head;
-             while (temp->link != NULL)
+              //node *temp2 = head;
+             while (temp->link->link != NULL)
              {
-                     temp2 = temp;
+                     //temp2 = temp;
                      temp = temp->link;
              }
-             temp2->link = NULL;
-             free(temp);
-             temp = NULL;
+             //temp2->link = NULL;
+             temp->link = NULL;
+             free(temp->link);
+             temp->link = NULL;
 
      }
      return (head);
+}
+//deleting at the begining of a node
+node *delete_begin(node *head)
+{
 
+        if (head == NULL)
+        {
+                printf("List is already empty");
+        }
+        else
+        {
+                node *temp = head;
+                head = head->link;
+                free(temp);
+                temp = NULL;
+        }
+        return (head);
 }
 
 
@@ -140,6 +157,7 @@ int main()
         insert_pos(ptr, 402, 4);
         insert_pos(ptr, 403, 4);
         delete_node(ptr);
+        ptr = delete_begin(ptr);
         //print_list(ptr);
         print_list(ptr);
 
