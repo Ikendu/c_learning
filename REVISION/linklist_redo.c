@@ -22,7 +22,7 @@ void print_list(node *head)
         }
 }
 
-void insert_node(node *head, int data)
+/*void insert_node(node *head, int data)
 {
         node *temp, *ptr;
         temp = malloc(sizeof(node));
@@ -36,6 +36,15 @@ void insert_node(node *head, int data)
                 ptr = ptr->link;
         }
         ptr->link = temp;
+}*/
+node* insert_node(node *ptr, int data)
+{
+     node *temp = malloc(sizeof(node));
+     temp->data = data;
+     temp->link = NULL;
+
+     ptr->link = temp;
+     return (temp);
 }
 
 int main()
@@ -54,9 +63,12 @@ int main()
         current->link = NULL;
         head->link->link = current;
 
-        insert_node(head, 70);
-        insert_node(head, 600);
+        //insertion without while-loop
+        node *ptr = head;
+        ptr = insert_node(ptr, 70);
+        ptr = insert_node(ptr, 600);
 
+        ptr = head;    
         print_list(head);
 
         return(0);
