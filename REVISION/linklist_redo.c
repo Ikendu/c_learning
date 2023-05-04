@@ -122,6 +122,32 @@ node *delete_begin(node *head)
         }
         return (head);
 }
+//delete at a position
+void delete_pos(node *head, int pos)
+{
+        node *current = head;
+        node *prev = head;
+        if (head == NULL)
+           printf("Empty list");
+        else if (pos == 1)
+        {
+                head = current->link;
+                free(current);
+                current = NULL;
+        }
+        else
+        {
+                while (pos != 1)
+                {
+                        prev = current;
+                        current = current->link;
+                        pos--;
+                }
+                prev->link = current->link;
+                free(current);
+                current = NULL;
+        }
+}
 //delete entire link list
 node *delete_all(node *head)
 {
@@ -169,7 +195,8 @@ int main()
         insert_pos(ptr, 403, 4);
         delete_node(ptr);
         ptr = delete_begin(ptr);
-        ptr = delete_all(ptr);
+        delete_pos(ptr, 5);
+        //ptr = delete_all(ptr);
 
         print_list(ptr);
 
