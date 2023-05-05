@@ -9,25 +9,32 @@ typedef struct node
         struct node *next;
 }Node;
 
+//prototypes for the project
+Node *createhead(Node *head, int d);
+Node *addbegin(Node *head, int d);
+Node *addend(Node *head, int d);
+Node *addpos(Node *head, int d, int pos);
+void printlist(Node *head);
+Node *createlist(Node *head);
+
 //create a complete link list from user input
 Node *createlist(Node *head)
 {
-        int i, d, n;
+        int d, n, i;
 
-        printf("Enter the number of Nodes: \n");
-        scanf(" %d", &n);
-        if (n == 0)
-           return(head);
+        printf("Enter the number of Nodes:");
+        scanf("%d", &n);
+        if(n == 0)
+             return (head);
 
-        prinf("Enter the element of the list: \n");
-        scanf(" &d", &d);
-        head = createhead(head, d);
+        printf("Enter the element of Node 1: ");
+        scanf("%d", &d);
+        head = addbegin(head, d);
 
-        for (i = 1; i < n; i++)
+        for(i = 1, i < n; i++)
         {
-                printf("Enter the %d node data: \n", i+1);
-                scanf(" %d", &d);
-                head = addbegin(head, d);
+                printf("Enter the element of Node &d", i+1);
+                head = addend(head, d);
         }
-        return head;
+        return (head);
 }

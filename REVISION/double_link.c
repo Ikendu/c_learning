@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-//typedef NULL null
 
 typedef struct node
 {
@@ -8,6 +7,13 @@ typedef struct node
         int data;
         struct node *next;
 }Node;
+
+//complete prototype for the functions
+Node *createhead(Node *head, int d);
+Node *addbegin(Node *head, int d);
+Node *addend(Node *head, int d);
+Node *addpos(Node *head, int d, int pos);
+void printlist(Node *head);
 //function that creates double linker node
 Node *createhead(Node *head, int d)
 {
