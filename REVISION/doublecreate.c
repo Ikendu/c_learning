@@ -16,6 +16,8 @@ Node *addend(Node *head, int d);
 Node *addpos(Node *head, int d, int pos);
 void printlist(Node *head);
 Node *createlist(Node *head);
+Node *delnode1(Node *head);
+Node *delastnode(Node *head);
 
 //function that creates double linker node
 Node *createhead(Node *head, int d)
@@ -76,6 +78,34 @@ void printlist(Node *head)
         printf("\nThe sum of all members is %d\n", sum);
         printf("\nThe multiplication of all members is %d\n", mult);
 }
+
+//Deleting the first node of the list
+Node *delnode1(Node *head)
+{
+        head = head->next;
+        free(head->prev);
+        head->prev = NULL;
+
+        return head;
+}
+
+//Deleting the last node
+Node *delastnode(Node *head)
+{
+        Node *temp = head, *temp2;
+
+        while (temp->next != NULL)
+        {
+                temp = temp->next;
+        }
+        temp2 = temp->prev;
+        temp2->next = NULL;
+        free(temp);
+        temp = NULL;
+
+        return (head);
+}
+
 //create a complete link list from user input
 Node *createlist(Node *head)
 {
@@ -99,26 +129,20 @@ Node *createlist(Node *head)
         return (head);
 }
 
-//Deleting the first node of the list
-Node *delnode1(Node *head)
-{
-        head = head->next;
-        free(head->prev);
-        head->prev = NULL;
-
-        return head;
-}
-
 int main(void)
 {
         Node *head = NULL;
         head = createlist(head);
 
-        printf("Before deleting the first...");
+        printf("Using the complete nodes...");
         printlist(head);
 
-        printf("After deleting the first...");
+        printf("After deleting the first node...");
         head = delnode1(head);
+        printlist(head);
+
+        printf("After deleting the last node");
+        head = delastnode(head);
         printlist(head);
 
         return (0);
