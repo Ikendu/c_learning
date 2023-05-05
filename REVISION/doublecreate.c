@@ -99,10 +99,27 @@ Node *createlist(Node *head)
         return (head);
 }
 
+//Deleting the first node of the list
+Node *delnode1(Node *head)
+{
+        head = head->next;
+        free(head->prev);
+        head->prev = NULL;
+
+        return head;
+}
+
 int main(void)
 {
         Node *head = NULL;
         head = createlist(head);
+
+        printf("Before deleting the first...");
         printlist(head);
+
+        printf("After deleting the first...");
+        head = delnode1(head);
+        printlist(head);
+
         return (0);
 }
