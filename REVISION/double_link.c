@@ -59,7 +59,7 @@ Node *addpos(Node *head, int d, int pos)
         Node *newP = NULL;
         newP = createhead(newP, d);
 
-        //pos--;
+        pos--;
         while(pos != 1)
         {
                 temp = temp->next;
