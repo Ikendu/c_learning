@@ -106,6 +106,36 @@ Node *delastnode(Node *head)
         return (head);
 }
 
+//Deleting an intermediate node
+Node *delintermid(Node *head, int pos)
+{
+        Node *temp = head, *temp2 = NULL;
+
+        if (pos == 1)
+           return(head);
+
+        while (pos > 1)
+        {
+                temp = temp->next;
+                pos--;
+        }
+        if (temp->next == NULL)
+                head = delastnode(head);
+        else if (temp == NULL)
+                return (head);
+        else
+        {
+                temp2 = temp->prev;
+                temp2->next = temp->next;
+                temp->next->prev = temp2;
+                free(temp);
+                temp = NULL;
+          }
+
+
+        return (head);
+}
+
 //create a complete link list from user input
 Node *createlist(Node *head)
 {
@@ -131,6 +161,8 @@ Node *createlist(Node *head)
 
 int main(void)
 {
+        int x;
+
         Node *head = NULL;
         head = createlist(head);
 
@@ -141,9 +173,20 @@ int main(void)
         head = delnode1(head);
         printlist(head);
 
-        printf("After deleting the last node");
+        printf("After deleting the last node...");
         head = delastnode(head);
         printlist(head);
+
+        printf("Enter 0 to delete an intermidiate node or 1 to stop...");
+        scanf("%d", &x);
+        if (x == 0)
+        {
+                printf("After deleting the last node");
+                head = delastnode(head);
+                printlist(head);
+        }
+        else return;
+
 
         return (0);
 }
