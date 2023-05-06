@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define null NULL;
+
 //create node
 typedef struct node
 {
@@ -23,7 +25,7 @@ Node *delastnode(Node *head);
 Node *createhead(Node *head, int d)
 {
          Node *temp = malloc(sizeof(Node));
-         temp->next = NULL;
+         temp->next = null;
          temp->data = d;
          temp->prev = NULL;
          head = temp;
