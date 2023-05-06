@@ -35,16 +35,50 @@ int main()
          putchar('\n');
 
 //prints all posible combinations of single digits
-         for (i = 10; i < 20; i++)
+         for (i = 1; i < 10; i++)
          {
-                 putchar((i%10) + '0');
-                 if (i != 19)
+                 putchar((i) + '0');
+                 if (i != 9)
                  {
                          putchar(',');
                          putchar(' ');
                  }
          }
          putchar('\n');
+//prints 00 to 99 using putchar
+         int j;
+         for(i = 10; i < 20; i++)
+         {
+               for (j = 10; j < 20; j++)
+               {
+                       putchar((i % 10) + '0');
+                       putchar((j % 10) + '0');
+                       if (i != 19 && j != 19)
+                       putchar(',');
+                       putchar(' ');
+               }
+         }
+         putchar('\n');
+
+         for(i = 10; i < 20; i++)
+         {
+                 for (j = 10; j < 20; j++)
+                 {
+                         if ((j%10) > (i%10))
+                         {
+                            putchar((i % 10) + '0');
+                            putchar((j % 10) + '0');
+                            if(i != 19 && j != 19)
+                            {
+                                    putchar(',');
+                            putchar(' ');
+                            }
+                         }
+
+
+               }
+               putchar('\n');
+         }
 
 //prints the lowease charater in reverse
          for (i = 'z'; i >= 'a'; i--)
@@ -71,5 +105,27 @@ int main()
             printf("%d last num is %d\n", n, last);
 
         return (0);
+
+        for (i = 10; i < 20; i++)
+        {
+                for (j = 10; j < 20; j++)
+                {
+                        for (a = 10; a < 20; a++)
+                        {
+                                if ((i%10) < (j%10) && (j%10) < (j%10))
+                                {
+                                        putchar((i&10) + '0');
+                                        putchar((j&10) + '0');
+                                        putchar((a&10) + '0');
+                                        if(i != 19 && j != 19 && a != 19)
+                                        {
+                                                putchar(',');
+                                                putchar(' ');
+
+                                        }
+                                }
+                        }
+                }
+        }
 
 }
