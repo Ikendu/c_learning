@@ -60,15 +60,16 @@ int main()
          }
          putchar('\n');
 
-         for(i = 10; i < 20; i++)
+//print two posible numbers excluding some
+         for(i = 0; i <= 9; i++)
          {
-                 for (j = 10; j < 20; j++)
+                 for (j = 0; j <= 9; j++)
                  {
-                         if ((j%10) > (i%10))
+                         if ((j) > (i))
                          {
-                            putchar((i % 10) + '0');
-                            putchar((j % 10) + '0');
-                            if(i != 19 && j != 19)
+                            putchar((i) + '0');
+                            putchar((j) + '0');
+                            if(i != 8 && j != 9)
                             {
                                     putchar(',');
                             putchar(' ');
@@ -76,9 +77,33 @@ int main()
                          }
 
 
-               }
+                 }
                putchar('\n');
          }
+
+//prints three posble combinations of numbers
+        for (i = 0; i <= 9; i++)
+                {
+                        for (j = 0; j <= 9; j++)
+                        {
+                                for (a = 0; a < 9; a++)
+                                {
+                                        if ((a) > (j) && (j) > (i))
+                                        {
+                                                putchar(i + '0');
+                                                putchar(j + '0');
+                                                putchar(a + '0');
+                                                if(i != 17 && j != 18 && a != 19)
+                                                {
+                                                        putchar(',');
+                                                        putchar(' ');
+
+                                                }
+                                        }
+                                }
+                        }
+                }
+                putchar('\n');
 
 //prints the lowease charater in reverse
          for (i = 'z'; i >= 'a'; i--)
@@ -106,26 +131,5 @@ int main()
 
         return (0);
 
-        for (i = 10; i < 20; i++)
-        {
-                for (j = 10; j < 20; j++)
-                {
-                        for (a = 10; a < 20; a++)
-                        {
-                                if ((i%10) < (j%10) && (j%10) < (j%10))
-                                {
-                                        putchar((i&10) + '0');
-                                        putchar((j&10) + '0');
-                                        putchar((a&10) + '0');
-                                        if(i != 19 && j != 19 && a != 19)
-                                        {
-                                                putchar(',');
-                                                putchar(' ');
-
-                                        }
-                                }
-                        }
-                }
-        }
 
 }
