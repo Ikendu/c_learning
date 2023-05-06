@@ -23,6 +23,7 @@ int main()
          }
          putchar('\n');
 
+//prints base 16 numbers with putchar
          for (i = 0; i < 10; i++)
              putchar('0'+i);
          a = '0';
@@ -33,6 +34,17 @@ int main()
          }
          putchar('\n');
 
+//prints all posible combinations of single digits
+         for (i = 10; i < 20; i++)
+         {
+                 putchar((i%10) + '0');
+                 if (i != 19)
+                 {
+                         putchar(',');
+                         putchar(' ');
+                 }
+         }
+         putchar('\n');
 
 //prints the lowease charater in reverse
          for (i = 'z'; i >= 'a'; i--)
