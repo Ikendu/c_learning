@@ -23,6 +23,18 @@ int main()
          }
          putchar('\n');
 
+         for (i = 0; i < 10; i++)
+             putchar('0'+i);
+         a = '0';
+         for (i = 1; i < 6; i++)
+         {
+                putchar(i+'a');
+                a++;
+         }
+         putchar('\n');
+
+
+//prints the lowease charater in reverse
          for (i = 'z'; i >= 'a'; i--)
              putchar(i);
              putchar('\n');
