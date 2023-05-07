@@ -183,6 +183,27 @@ int fibo()
         }
         printf("\n");
 }
+//even valued fibonacci sumation
+int fibo2()
+{
+        int long a = 1;
+        int long b = 2;
+        int long c = a + b;
+        int sum = 0;
+
+        while (c < 400000)
+        {
+
+                if (c%2==0)
+                {
+                        sum += c;
+                }
+                a = b;
+                b = c;
+                c = a + b;
+        }
+        printf("\n%d", sum);
+}
 //MAIN FUNCTION
 int main(void)
 {
@@ -210,6 +231,8 @@ int main(void)
         printmult();
 
         fibo();
+
+        fibo2();
 
         return (0);
 }
