@@ -131,6 +131,7 @@ int printnum(int n)
                         if(i != 89)
                              printf(", ");
                 }
+                printf("\n");
         }else
         {
                 for (i = n; i <= 89; i++)
@@ -139,7 +140,28 @@ int printnum(int n)
                         if(i != 89)
                              printf(", ");
                 }
+                printf("\n");
         }
+}
+
+//prints the sum of all the multiples of 3 and 5
+int printmult()
+{
+        int sum = 0;
+        int sum2 = 0;
+        for (i = 0; i < 1024; i++)
+        {
+                if (i%3 == 0)
+                {
+                        sum += i;
+                }
+                if (i%5 == 0)
+                {
+                        sum2 += i;
+                }
+        }
+        printf("%d ", sum);
+        printf("%d", sum2);
 }
 //MAIN FUNCTION
 int main(void)
@@ -164,6 +186,8 @@ int main(void)
         times_table();
 
         printnum(59);
+
+        printmult();
 
         return (0);
 }
