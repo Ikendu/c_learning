@@ -53,7 +53,7 @@ int main()
                {
                        putchar((i % 10) + '0');
                        putchar((j % 10) + '0');
-                       if (i != 19 && j != 19)
+                       if (i != 19 || j != 19)
                        putchar(',');
                        putchar(' ');
                }
@@ -69,10 +69,10 @@ int main()
                          {
                             putchar((i) + '0');
                             putchar((j) + '0');
-                            if(i != 8 && j != 9)
+                            if(i != 8 || j != 9)
                             {
                                     putchar(',');
-                            putchar(' ');
+                                    putchar(' ');
                             }
                          }
 
@@ -86,14 +86,14 @@ int main()
                 {
                         for (j = 0; j <= 9; j++)
                         {
-                                for (a = 0; a < 9; a++)
+                                for (a = 0; a <= 9; a++)
                                 {
                                         if ((a) > (j) && (j) > (i))
                                         {
                                                 putchar(i + '0');
                                                 putchar(j + '0');
                                                 putchar(a + '0');
-                                                if(i != 17 && j != 18 && a != 19)
+                                                if(i != 7 || j != 8 || a != 9)
                                                 {
                                                         putchar(',');
                                                         putchar(' ');
@@ -104,6 +104,8 @@ int main()
                         }
                 }
                 putchar('\n');
+
+
 
 //prints the lowease charater in reverse
          for (i = 'z'; i >= 'a'; i--)
