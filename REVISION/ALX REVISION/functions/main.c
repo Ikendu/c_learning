@@ -40,6 +40,14 @@ int _abs(char n)
             return (n);
  }
 
+//print the last digit
+int lastdigit(int n)
+{
+        int x = abs(n%10);
+        return (x);
+
+}
+
 //MAIN FUNCTION
 int main(void)
 {
@@ -50,8 +58,11 @@ int main(void)
 
         islower('H');
 
-        int n = _abs(--45);
+        int n = _abs(-45);
         printf("%d\n", n);
+
+        int a = lastdigit(-3036);
+        printf("%d\n", a);
 
         return (0);
 }
