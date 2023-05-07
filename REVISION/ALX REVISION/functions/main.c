@@ -160,8 +160,28 @@ int printmult()
                         sum2 += i;
                 }
         }
-        printf("%d ", sum);
-        printf("%d", sum2);
+        printf("%d\n ", sum);
+        printf("%d\n", sum2);
+}
+
+//evaluation of fibonoccai sequence
+int fibo()
+{
+        long int i = 1;
+        long int j = 2;
+        long int k = i + j;
+        int count;
+        printf("%ld, %ld, ", i, j);
+        for (count = 0; count <= 50; count++)
+        {
+                printf("%ld", k);
+                i = j;
+                j = k;
+                k = i + j;
+                if( count < 50 )
+                    printf(", ");
+        }
+        printf("\n");
 }
 //MAIN FUNCTION
 int main(void)
@@ -188,6 +208,8 @@ int main(void)
         printnum(59);
 
         printmult();
+
+        fibo();
 
         return (0);
 }
