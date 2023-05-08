@@ -364,6 +364,8 @@ void primefact(void)
         }
         printf("%lu\n", num);
 }
+
+
 //MAIN FUNCTION
 int main(void)
 {
@@ -409,6 +411,8 @@ int main(void)
        triangle(10);
 
        primefact();
+
+       print_number(3.8);
 
         return (0);
 }
