@@ -228,6 +228,24 @@ void printline(int n)
         putchar('_');
         putchar('\n');
 }
+void printdiagonal(int n)
+{
+        if (n <= 0)
+           putchar('\n');
+        else
+        {
+                for (i = 0; i < n; i++)
+                {
+                        for(j = 0; j < i; j++)
+                        {
+                                putchar(' ');
+                        }
+                        _putchar('\\');
+                        _putchar('\n');
+                }
+
+        }
+}
 //MAIN FUNCTION
 int main(void)
 {
@@ -261,8 +279,7 @@ int main(void)
         tenmult();
 
         printline(10);
-        printline(0);
-        printline(-1);
+       printdiagonal(10);
 
         return (0);
 }
