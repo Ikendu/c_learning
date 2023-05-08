@@ -222,6 +222,12 @@ void tenmult()
                 printf("\n");
         }
 }
+void printline(int n)
+{
+        for (i = 1; i <= n; i++)
+        putchar('_');
+        putchar('\n');
+}
 //MAIN FUNCTION
 int main(void)
 {
@@ -253,6 +259,10 @@ int main(void)
         fibo2();
 
         tenmult();
+
+        printline(10);
+        printline(0);
+        printline(-1);
 
         return (0);
 }
