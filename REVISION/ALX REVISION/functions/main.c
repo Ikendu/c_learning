@@ -343,6 +343,27 @@ void triangle(int n)
                 printf("\n");
         }
 }
+
+//print prime factor
+void primefact(void)
+{
+        unsigned int n = 2;
+        unsigned long num = 612852475143;
+
+        while (n != num)
+        {
+                if (num % n == 0)
+                {
+                        num = num/n;
+
+                }else
+                {
+                        n++;
+
+                }
+        }
+        printf("%lu\n", num);
+}
 //MAIN FUNCTION
 int main(void)
 {
@@ -386,6 +407,8 @@ int main(void)
 
        //print_square(10);
        triangle(10);
+
+       primefact();
 
         return (0);
 }
