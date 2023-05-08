@@ -252,27 +252,97 @@ void printdiagonal(int n)
 void psqure(int n)
 {
         for (i = 0; i < n; i++)
-        printf("# ");
+        printf("# ");                   //prints the first line
         for (i = 0; i < n; i++)
         {
-                putchar('#');
+                putchar('#');           //prints the left vertical line
                 for(j = 0; j < n*2; j++)
                 {
-                        putchar(' ');
+                        putchar(' ');   //creates inside space
 
                 }
-                if(i != 0)
-                putchar('#');
-                //putchar('#');
+                if(i != 0)              //removes the first stray #
+                putchar('#');           //prints the right vertical line
                 putchar('\n');
         }
-
         for(j = 0; j <= n; j++)
-           printf("# ");
+           printf("# ");                //prints the ground horizontal line
            putchar('\n');
 }
 
+//program that prints with certain details
+void print100()
+{
+        for (i = 1; i <= 100; i++)
+        {
+                if (i%5 == 0 && i%3 == 0)
+                {
+                        printf("BuzzFizz");
+                        printf(" ");
+                        continue;
+                }
+                if (i%3 == 0)
+                   {
+                           printf("Fizz");
+                           printf(" ");
+                           continue;
+                   }
+                if (i%5 == 0)
+                {
+                        printf("Buzz");
+                        printf(" ");
+                        continue;
+                }
 
+
+
+                printf("%d ", i);
+
+        }
+        printf("\n");
+}
+
+//copied version of above
+int printn(void)
+{
+	int i;
+
+	for (i = 1; i <= 100; i++)
+	{
+		if (i % 3 == 0 || i % 5 == 0)
+		{
+			if (i % 3 == 0)
+			{
+				printf("Fizz");
+			}
+			if (i % 5 == 0)
+			{
+				printf("Buzz");
+			}
+		} else
+		{
+			printf("%d", i);
+		}
+		if (i != 100)
+			printf(" ");
+	}
+	printf("\n");
+	return (0);
+}
+
+//print a triangle
+int k;
+void triangle(int n)
+{
+        for (i = 0; i <= n; i++)
+        {
+                for (j = n-i; j > 0; j--)
+                    printf(" ");
+                for (k = 0; k <= i; k++)
+                    printf("# ");
+                printf("\n");
+        }
+}
 //MAIN FUNCTION
 int main(void)
 {
@@ -308,9 +378,14 @@ int main(void)
        // printline(10);
        printdiagonal(10);
 
-       psqure(30);
+       psqure(10);
+
+       print100();
+
+       //printn();
 
        //print_square(10);
+       triangle(10);
 
         return (0);
 }
