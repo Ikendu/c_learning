@@ -246,6 +246,33 @@ void printdiagonal(int n)
 
         }
 }
+
+//print a squre shape
+
+void psqure(int n)
+{
+        for (i = 0; i < n; i++)
+        printf("# ");
+        for (i = 0; i < n; i++)
+        {
+                putchar('#');
+                for(j = 0; j < n*2; j++)
+                {
+                        putchar(' ');
+
+                }
+                if(i != 0)
+                putchar('#');
+                //putchar('#');
+                putchar('\n');
+        }
+
+        for(j = 0; j <= n; j++)
+           printf("# ");
+           putchar('\n');
+}
+
+
 //MAIN FUNCTION
 int main(void)
 {
@@ -262,24 +289,28 @@ int main(void)
         int a = lastdigit(-3036);
         printf("%d\n", a);
 
-        everyminute();
+       // everyminute();
 
         times9();
 
-        times_table();
+       // times_table();
 
-        printnum(59);
+       // printnum(59);
 
-        printmult();
+        //printmult();
 
         fibo();
 
         fibo2();
 
-        tenmult();
+        //tenmult();
 
-        printline(10);
+       // printline(10);
        printdiagonal(10);
+
+       psqure(30);
+
+       //print_square(10);
 
         return (0);
 }
