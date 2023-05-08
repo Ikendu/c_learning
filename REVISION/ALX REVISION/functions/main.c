@@ -202,7 +202,25 @@ int fibo2()
                 b = c;
                 c = a + b;
         }
-        printf("\n%d", sum);
+        printf("\n%d\n", sum);
+}
+//print the numbers 0 to 14 into 10
+void tenmult()
+{
+        for (i = 0; i < 10; i++)
+        {
+                for (j = 0; j <= 14; j++)
+                {
+                        if (j > 9)
+                        {
+                                putchar((j/10) + '0');
+
+                        }
+                        putchar(j%10 + '0');
+                        putchar(' ');
+                }
+                printf("\n");
+        }
 }
 //MAIN FUNCTION
 int main(void)
@@ -233,6 +251,8 @@ int main(void)
         fibo();
 
         fibo2();
+
+        tenmult();
 
         return (0);
 }
