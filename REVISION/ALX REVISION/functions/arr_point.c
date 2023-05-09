@@ -141,6 +141,17 @@ void concate2(char dest[], char src[], int n)
         dest[i+j] = '\0';
 }
 
+//copy a number of string to destination
+void copystr(char dest[], char src[], int n)
+{
+        int i, j;
+        for (i = 0; i < n && src[i] != '\0'; i++)
+        {
+                dest[i] = src[i];
+        }
+        dest[i] = '\0';
+}
+
 //MAIN FUNCTION
 int main()
 {
@@ -166,6 +177,11 @@ int main()
 
         concate2(ar, ar2, 5);
         printf("%s\n", ar);
+
+        char ar01[] = "Welcomegreatness";
+        char ar3[40];
+        copystr(ar3, ar01, 20);
+        printf("%s\n", ar3);
 
         return (0);
 }
