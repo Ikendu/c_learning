@@ -55,11 +55,38 @@ void putsrev(char *str)
 void print2(char *s)
 {
         int i;
+
         for (i = 0; i < s[i]; i++)
         {
-                if (s[i]%2 == 0)
+                if (i%2 == 0)
                 putchar(s[i]);
         }
+        putchar('\n');
+}
+
+//print half of a string
+void printhalf(char *str)
+{
+        int i;
+        int m;
+
+        if (strlen(str) % 2 == 0)
+        {
+                i = (strlen(str)) / 2;
+        }
+        else
+        {
+                i = ((strlen(str)) - 1) / 2;
+        }
+
+        for (i++; i < (strlen(str)); i++)
+        {
+                putchar(str[i]);
+        }
+        putchar('\n');
+        for (i = 0; i < strlen(str)/2; i++)
+                putchar(str[i]);
+        putchar('\n');
 }
 //MAIN FUNCTION
 int main()
@@ -69,4 +96,5 @@ int main()
         putst("Hello how are you doing");
         putsrev("Hello how are you doing");
         print2("Goodmorning");
+        printhalf("Greatnessi");
 }
