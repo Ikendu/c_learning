@@ -86,7 +86,29 @@ void printhalf(char *str)
         putchar('\n');
         for (i = 0; i < strlen(str)/2; i++)
                 putchar(str[i]);
+
         putchar('\n');
+}
+
+//print n number of an array
+void printarr(int *a, int n)
+{
+        int i;
+        int len = 0;
+
+
+        {
+                for (i = 0; i < n; i++ )
+                {
+                        printf("%d", a[i]);
+
+                        if (i < n-1)
+                        printf(", ");
+                }
+                printf("\n");
+        }
+
+
 }
 //MAIN FUNCTION
 int main()
@@ -97,4 +119,7 @@ int main()
         putsrev("Hello how are you doing");
         print2("Goodmorning");
         printhalf("Greatnessi");
+
+        int arr[] = {2, 4, 5, 6, 4, 4, 2};
+        printarr(arr, 9);
 }
