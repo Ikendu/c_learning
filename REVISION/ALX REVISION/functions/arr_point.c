@@ -96,7 +96,13 @@ void printarr(int *a, int n)
         int i;
         int len = 0;
 
+        for (i = 0; i < a[i]; i++)
+            len += i;
 
+        if (++len < n)
+        {
+                printf("The items are only %d in number\n", len);
+        }else
         {
                 for (i = 0; i < n; i++ )
                 {
@@ -107,9 +113,24 @@ void printarr(int *a, int n)
                 }
                 printf("\n");
         }
-
-
 }
+
+// concatenates string
+char concate(char dest[], char src[])
+{
+        int i, j;
+
+        for (j = 0; dest[j] != '\0'; j++)
+        {}
+        for (i = 0; src[i] != '\0'; i++)
+        {
+                dest[j + i] = src[i];
+        }
+        dest[j + i] = '\0';
+
+        return (dest);
+}
+
 //MAIN FUNCTION
 int main()
 {
@@ -121,5 +142,17 @@ int main()
         printhalf("Greatnessi");
 
         int arr[] = {2, 4, 5, 6, 4, 4, 2};
-        printarr(arr, 9);
+        printarr(arr, 7);
+
+        char *arr1 = "36465";
+
+        printf("%d\n", atoi(arr1) * 2);
+
+        char ar[] = "Hello";
+        char ar2[] = "Greatness";
+
+        concate(ar, ar2);
+        printf("%s\n", ar);
+
+        return (0);
 }
