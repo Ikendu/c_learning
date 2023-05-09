@@ -152,6 +152,18 @@ void copystr(char dest[], char src[], int n)
         dest[i] = '\0';
 }
 
+//function that compares a string
+int compares(char str1[], char str2[])
+{
+        int i = 0;
+        while (str1[i] - str2[i] == 0 && str1[i] != '\0')
+        {
+                i++;
+        }
+        return(str1[i] - str2[i]);
+}
+
+
 //MAIN FUNCTION
 int main()
 {
@@ -170,7 +182,7 @@ int main()
         printf("%d\n", atoi(arr1) * 2);
 
         char ar[] = "Hello";
-        char ar2[] = "Greatness";
+        char ar2[] = "Great";
 
         concate(ar, ar2);
         printf("%s\n", ar);
@@ -182,6 +194,15 @@ int main()
         char ar3[40];
         copystr(ar3, ar01, 20);
         printf("%s\n", ar3);
+
+        concate(ar, ar2);
+
+        //int n = compares(ar, ar2);
+        if(compares(ar, ar2) == 0)
+        printf("True");
+        else
+        printf("False");
+
 
         return (0);
 }
