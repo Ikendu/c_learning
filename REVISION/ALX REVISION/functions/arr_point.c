@@ -26,11 +26,32 @@ int strlent(char *s)
         {
                 sum ++;
         }
-        printf("%d", sum);
+        printf("%d\n", sum);
+}
+
+//puts a string function
+void putst(char *str)
+{
+        int i = 0;
+
+        while (str[i] != '\0')
+        {
+                putchar(str[i]);
+                i++;
+        }
+        putchar('\n');
+}
+void putsrev(char *str)
+{
+        int i;
+        for (i = strlen(str)-1; i >= 0; i--)
+        putchar(str[i]);
 }
 //MAIN FUNCTION
 int main()
 {
         update(100);
         strlent("hellogoikj");
+        putst("Hello how are you doing");
+        putsrev("Hello how are you doing");
 }
