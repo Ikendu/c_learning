@@ -41,11 +41,25 @@ void putst(char *str)
         }
         putchar('\n');
 }
+
+//prints reverse of a sting
 void putsrev(char *str)
 {
         int i;
         for (i = strlen(str)-1; i >= 0; i--)
         putchar(str[i]);
+        putchar('\n');
+}
+
+//prints one character out of two
+void print2(char *s)
+{
+        int i;
+        for (i = 0; i < s[i]; i++)
+        {
+                if (s[i]%2 == 0)
+                putchar(s[i]);
+        }
 }
 //MAIN FUNCTION
 int main()
@@ -54,4 +68,5 @@ int main()
         strlent("hellogoikj");
         putst("Hello how are you doing");
         putsrev("Hello how are you doing");
+        print2("Goodmorning");
 }
