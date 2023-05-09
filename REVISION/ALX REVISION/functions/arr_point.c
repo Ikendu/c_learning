@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 //int i, j, k, x, y;
 //updates an int pointer 98
@@ -116,25 +117,34 @@ void printarr(int *a, int n)
 }
 
 // concatenates string
-char concate(char dest[], char src[])
+void concate(char dest[], char src[])
+{
+        int i, j;
+        for (i = 0; dest[i] != '\0'; i++)
+        ;
+        for (j = 0; src[j] != '\0'; j++)
+        {
+                dest[i + j] = src[j];
+        }
+        dest[i+j] = '\0';
+}
+void concate2(char dest[], char src[], int n)
 {
         int i, j;
 
-        for (j = 0; dest[j] != '\0'; j++)
-        {}
-        for (i = 0; src[i] != '\0'; i++)
+        for (i = 0; dest[i] != '\0'; i++)
+        ;
+        for (j = 0; j < n && src[j] != '\0'; j++)  //j<n counts the number to append
         {
-                dest[j + i] = src[i];
+                dest[i + j] = src[j];
         }
-        dest[j + i] = '\0';
-
-        return (dest);
+        dest[i+j] = '\0';
 }
 
 //MAIN FUNCTION
 int main()
 {
-        update(100);
+        //update(100);
         strlent("hellogoikj");
         putst("Hello how are you doing");
         putsrev("Hello how are you doing");
@@ -152,6 +162,9 @@ int main()
         char ar2[] = "Greatness";
 
         concate(ar, ar2);
+        printf("%s\n", ar);
+
+        concate2(ar, ar2, 5);
         printf("%s\n", ar);
 
         return (0);
