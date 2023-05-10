@@ -210,6 +210,29 @@ char devpass(char str[])
 
         return(str);
 }
+
+//generating codes from user input
+char passcode(char str[])
+{
+        char pass1[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWsSyYzZ";
+        char pass2[] = "nNoOpPqQrRsStTuUvVwWsSyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
+        int j;
+        int i;
+
+        for (i = 0; str[i] != '\0'; i++)
+        {
+                for (j = 0; pass1[j] != '\0'; j++)
+                {
+                        if (str[i] == pass1[j])
+                        {
+                                str[i] = pass2[j];
+                                break;
+                        }
+                }
+        }
+        printf("%s\n", str);
+        return (str);
+}
 //MAIN FUNCTION
 int main()
 {
@@ -256,6 +279,9 @@ int main()
 
         char str1[] = "greatness";
         devpass(str1);
+
+        char str2[] = "greatness";
+        passcode(str2);
 
 
         return (0);
