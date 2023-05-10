@@ -182,11 +182,33 @@ char reverses(char arr[], int n)
 //change to uppercase
 char toUpper(char str[])
 {
-        int i, j = 0;
+        int i;
         for (i = 0; str[i] != '\0'; i++)
             if (str[i] >= 'a' && str[i] <= 'z')
                      str[i] = str[i] - 32;
         printf("%s\n", str);
+}
+
+//function develops a password/code
+char devpass(char str[])
+{
+        int i, j;
+        char pass[] = "a4A4e3E3o0O0t7T7l1L1";
+
+        for (i = 0; str[i] != '\0'; i++)
+        {
+                for (j = 0; pass[j] != '\0'; j++)
+                {
+                        if (str[i] == pass[j])
+                        {
+                                str[i] = pass[j + 1];
+                                break;
+                        }
+                }
+        }
+        printf("%s\n", str);
+
+        return(str);
 }
 //MAIN FUNCTION
 int main()
@@ -231,6 +253,9 @@ int main()
 
         char str[] = "Greatness";
         toUpper(str);
+
+        char str1[] = "greatness";
+        devpass(str1);
 
 
         return (0);
