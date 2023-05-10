@@ -152,7 +152,7 @@ void copystr(char dest[], char src[], int n)
         dest[i] = '\0';
 }
 
-//function that compares a string
+//function that compares a string...not
 int compares(char str1[], char str2[])
 {
         int i = 0;
@@ -163,7 +163,31 @@ int compares(char str1[], char str2[])
         return(str1[i] - str2[i]);
 }
 
+//reverses an array of string
+char reverses(char arr[], int n)
+{
+        char arr2;
+        int i;
 
+        for (i = 0; i < n/2; i++)
+        {
+               arr2 = arr[i];
+               arr[i] = arr[n - i - 1];
+               arr[n - i - 1] = arr2;
+        }
+        //arr[i] = '\0';
+        printf("%s\n", arr);
+}
+
+//change to uppercase
+char toUpper(char str[])
+{
+        int i, j = 0;
+        for (i = 0; str[i] != '\0'; i++)
+            if (str[i] >= 'a' && str[i] <= 'z')
+                     str[i] = str[i] - 32;
+        printf("%s\n", str);
+}
 //MAIN FUNCTION
 int main()
 {
@@ -199,9 +223,14 @@ int main()
 
         //int n = compares(ar, ar2);
         if(compares(ar, ar2) == 0)
-        printf("True");
+        printf("True\n");
         else
-        printf("False");
+        printf("False\n");
+
+        reverses(ar2, 5);
+
+        char str[] = "Greatness";
+        toUpper(str);
 
 
         return (0);
